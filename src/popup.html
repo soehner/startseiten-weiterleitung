@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <title>Startseiten-Weiterleitung</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="popup">
+  <header>
+    <img src="../icons/icon32.png" alt="" width="24" height="24">
+    <h1>Startseiten-Weiterleitung</h1>
+  </header>
+
+  <label class="switch-row">
+    <span id="stateText">…</span>
+    <span class="switch">
+      <input type="checkbox" id="enabled">
+      <span class="slider"></span>
+    </span>
+  </label>
+  <p class="hint">Tastenkürzel: <kbd id="shortcut">Alt+Shift+S</kbd></p>
+
+  <section class="box">
+    <h2>Aktueller Tab</h2>
+    <dl>
+      <dt>Domain</dt><dd id="host">–</dd>
+      <dt>Benutzer</dt><dd id="user">–</dd>
+      <dt>Regel</dt><dd id="rule">–</dd>
+    </dl>
+  </section>
+
+  <div class="buttons">
+    <button id="addRule" disabled>Regel für diese Seite anlegen</button>
+    <button id="reset">Merker zurücksetzen</button>
+    <button id="options" class="primary">Einstellungen</button>
+  </div>
+  <p id="msg" class="hint"></p>
+
+  <script src="common.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

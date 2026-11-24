@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "Startseiten-Weiterleitung",
+  "short_name": "Startseite",
+  "version": "1.1.0",
+  "description": "Leitet abhängig von Domain und angemeldetem Benutzer (z. B. Q.wiki) automatisch auf eine festgelegte Startseite weiter.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "Startseiten-Weiterleitung",
+    "default_popup": "src/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png"
+    }
+  },
+  "options_ui": {
+    "page": "src/options.html",
+    "open_in_tab": true
+  },
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "permissions": [
+    "storage",
+    "scripting",
+    "activeTab"
+  ],
+  "optional_host_permissions": [
+    "*://*/*"
+  ],
+  "commands": {
+    "toggle-enabled": {
+      "suggested_key": {
+        "default": "Alt+Shift+S"
+      },
+      "description": "Weiterleitung ein-/ausschalten"
+    }
+  }
+}

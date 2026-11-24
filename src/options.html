@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <title>Startseiten-Weiterleitung – Einstellungen</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="options">
+  <header>
+    <img src="../icons/icon48.png" alt="" width="36" height="36">
+    <h1>Startseiten-Weiterleitung</h1>
+  </header>
+
+  <label class="switch-row big">
+    <span id="stateText">…</span>
+    <span class="switch">
+      <input type="checkbox" id="enabled">
+      <span class="slider"></span>
+    </span>
+  </label>
+
+  <p class="hint">
+    Wenn eine Seite der eingestellten <b>Domain</b> geladen wird und dort der eingestellte <b>Benutzer</b>
+    angemeldet ist, wird auf die <b>Ziel-Seite</b> weitergeleitet. Mehrere Benutzer mit Komma trennen,
+    <code>*</code> = jeder angemeldete Benutzer. Domain mit <code>*.</code> davor gilt auch für Subdomains.
+    Das Ziel kann absolut (<code>https://…</code>) oder relativ zur Domain (<code>/Main/MeineSeite</code>) sein.
+  </p>
+
+  <div id="rules"></div>
+
+  <div class="buttons">
+    <button id="add">+ Regel hinzufügen</button>
+    <button id="save" class="primary">Speichern</button>
+    <span class="spacer"></span>
+    <button id="export">Exportieren</button>
+    <button id="import">Importieren</button>
+    <input type="file" id="importFile" accept="application/json,.json" hidden>
+  </div>
+  <p id="msg" class="msg"></p>
+
+  <template id="ruleTpl">
+    <fieldset class="rule">
+      <legend>
+        <label><input type="checkbox" data-f="enabled"> aktiv</label>
+      </legend>
+      <div class="grid">
+        <label>Domain
+          <input type="text" data-f="domain" placeholder="firma.ariadne.cloud">
+        </label>
+        <label>Benutzer
+          <input type="text" data-f="user" placeholder="MaxMustermann">
+        </label>
+        <label class="wide">Ziel-Seite
+          <input type="text" data-f="target" placeholder="https://firma.ariadne.cloud/Main/MeineStartseite">
+        </label>
+        <label class="wide">Wann weiterleiten?
+          <select data-f="mode">
+            <option value="login">Einmal nach dem Login (danach freie Navigation)</option>
+            <option value="home">Jedes Mal, wenn die Startseite der Domain aufgerufen wird</option>
+          </select>
+        </label>
+      </div>
+      <details>
+        <summary>Erweitert (nur für andere Systeme als Q.wiki/Foswiki nötig)</summary>
+        <div class="grid">
+          <label class="wide">CSS-Selektor für den Benutzernamen
+            <input type="text" data-f="selector" placeholder="z. B. #user-menu .username">
+          </label>
+          <label class="wide">Regulärer Ausdruck auf den Seitenquelltext (Gruppe 1 = Benutzer)
+            <input type="text" data-f="regex" placeholder='z. B. "currentUser":"([^"]+)"'>
+          </label>
+          <label class="wide">Startseiten-Pfad (Regex, nur Modus „Startseite“)
+            <input type="text" data-f="homePattern">
+          </label>
+        </div>
+      </details>
+      <div class="rule-footer">
+        <span class="perm-warning" hidden>⚠ Zugriff auf diese Domain noch nicht erlaubt – bitte „Speichern“ klicken und bestätigen.</span>
+        <span class="spacer"></span>
+        <button class="remove danger">Regel löschen</button>
+      </div>
+    </fieldset>
+  </template>
+
+  <script src="common.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
