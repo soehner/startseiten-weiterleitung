@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Startseiten-Weiterleitung – Installationsanleitung</title>
+<style>
+  @page { size: A4; margin: 18mm 18mm 20mm 18mm; }
+  body { font-family: "Segoe UI", "Noto Sans", "DejaVu Sans", Arial, sans-serif; font-size: 10.5pt; line-height: 1.45; color: #1d2430; }
+  h1 { font-size: 21pt; margin: 0 0 2mm; color: #13406b; }
+  h2 { font-size: 13.5pt; color: #13406b; border-bottom: 1.5px solid #c9d6e3; padding-bottom: 1.5mm; margin: 5.5mm 0 2.5mm; page-break-after: avoid; }
+  h3 { font-size: 11pt; margin: 4mm 0 1.5mm; page-break-after: avoid; }
+  .sub { color: #5a6676; margin: 0 0 6mm; }
+  .head { display: flex; align-items: center; gap: 5mm; border-bottom: 3px solid #13406b; padding-bottom: 4mm; margin-bottom: 5mm; }
+  .head img { width: 16mm; height: 16mm; }
+  code, kbd { font-family: "DejaVu Sans Mono", Consolas, monospace; font-size: 9pt; background: #eef2f6; padding: 0.3mm 1.2mm; border-radius: 2px; }
+  kbd { border: 1px solid #b8c4d0; }
+  table { border-collapse: collapse; width: 100%; margin: 2mm 0 3mm; font-size: 9.8pt; }
+  th, td { border: 1px solid #c9d6e3; padding: 1.6mm 2.2mm; text-align: left; vertical-align: top; }
+  th { background: #e8eff6; }
+  ol, ul { margin: 1mm 0 2mm; padding-left: 6mm; }
+  li { margin: 0.8mm 0; }
+  .box { border-left: 4px solid #2b7bc0; background: #f1f6fb; padding: 2.5mm 4mm; margin: 3mm 0; page-break-inside: avoid; }
+  .warn { border-left-color: #d08a00; background: #fdf6e8; }
+  .avoid { page-break-inside: avoid; }
+  .small { font-size: 9pt; color: #5a6676; }
+</style>
+</head>
+<body>
+
+<div class="head">
+  <img src="../icons/icon128.png" alt="">
+  <div>
+    <h1>Startseiten-Weiterleitung</h1>
+    <div class="sub" style="margin:0">Installations- und Einrichtungsanleitung · Version 1.1.0 · Stand 23.11.2026</div>
+  </div>
+</div>
+
+<h2>1. Wozu dient die Erweiterung?</h2>
+<p>Die Browser-Erweiterung leitet automatisch auf eine persönliche Startseite weiter, <b>wenn Domain und angemeldeter Benutzer passen</b>.
+Beispiel: Wer sich auf <code>firma.ariadne.cloud</code> anmeldet, landet direkt auf seiner eigenen Q.wiki-Seite statt auf der allgemeinen Startseite.</p>
+<p>Sie funktioniert in <b>Chrome, Edge, Brave, Opera, Vivaldi</b> und <b>Firefox (ab Version 128)</b>.</p>
+
+<h2>2. Inhalt des Pakets</h2>
+<table>
+  <tr><th>Datei</th><th>Zweck</th></tr>
+  <tr><td><code>startseiten-weiterleitung-1.1.0-chromium.zip</code></td><td>Erweiterung für Chrome, Edge, Brave, Opera, Vivaldi</td></tr>
+  <tr><td><code>startseiten-weiterleitung-1.1.0-firefox.zip</code></td><td>Erweiterung für Firefox</td></tr>
+  <tr><td><code>Installationsanleitung.pdf</code></td><td>dieses Dokument</td></tr>
+  <tr><td><code>README.md</code></td><td>technische Kurzbeschreibung</td></tr>
+</table>
+
+<h2>3. Installation</h2>
+
+<div>
+<h3>3.1 Chrome, Edge, Brave, Opera, Vivaldi</h3>
+<ol>
+  <li>Die Datei <code>startseiten-weiterleitung-1.1.0-chromium.zip</code> in einen <b>dauerhaften Ordner</b> entpacken, z.&nbsp;B. <code>Dokumente\Browser-Erweiterungen\Startseite</code>.
+      Der Ordner darf danach nicht gelöscht oder verschoben werden.</li>
+  <li>Die Erweiterungsseite des Browsers öffnen (Adresse in die Adresszeile eingeben):
+    <table>
+      <tr><th>Browser</th><th>Adresse</th></tr>
+      <tr><td>Chrome / Brave / Vivaldi</td><td><code>chrome://extensions</code></td></tr>
+      <tr><td>Edge</td><td><code>edge://extensions</code></td></tr>
+      <tr><td>Opera</td><td><code>opera://extensions</code></td></tr>
+    </table>
+  </li>
+  <li>Oben rechts (Edge: links unten) den <b>Entwicklermodus</b> einschalten.</li>
+  <li><b>„Entpackte Erweiterung laden“</b> (Edge: „Entpackt laden“) anklicken und den entpackten Ordner auswählen,
+      also den Ordner, in dem die Datei <code>manifest.json</code> liegt.</li>
+  <li>Die Erweiterung erscheint in der Liste. Über das Puzzle-Symbol in der Symbolleiste kann man sie <b>anheften</b>, damit das Symbol immer sichtbar ist.</li>
+</ol>
+<div class="box warn">Chrome und Edge zeigen bei entpackten Erweiterungen manchmal einen Hinweis zum Entwicklermodus an. Das ist normal und kann weggeklickt werden.</div>
+</div>
+
+<div class="avoid">
+<h3>3.2 Firefox</h3>
+<p><b>Zum Ausprobieren</b> (bleibt nur bis zum Neustart von Firefox aktiv):</p>
+<ol>
+  <li>Die Datei <code>startseiten-weiterleitung-1.1.0-firefox.zip</code> entpacken.</li>
+  <li><code>about:debugging#/runtime/this-firefox</code> öffnen.</li>
+  <li><b>„Temporäres Add-on laden …“</b> anklicken und die Datei <code>manifest.json</code> im entpackten Ordner wählen.</li>
+</ol>
+<p><b>Dauerhaft:</b> Firefox installiert dauerhaft nur signierte Erweiterungen. Dafür die ZIP-Datei unter
+<code>addons.mozilla.org/developers</code> als <b>„Nicht gelistet“</b> (unlisted) hochladen. Mozilla signiert sie automatisch,
+danach kann die erzeugte <code>.xpi</code>-Datei per Doppelklick bzw. Drag &amp; Drop in Firefox installiert werden.</p>
+</div>
+
+<h3>3.3 Verteilung im Unternehmen (optional)</h3>
+<p>Für mehrere Arbeitsplätze lässt sich die Erweiterung per Gruppenrichtlinie ausrollen:
+Chrome/Edge über <code>ExtensionInstallForcelist</code>, Firefox über <code>policies.json</code> → <code>ExtensionSettings</code>.</p>
+
+<h2>4. Einrichtung</h2>
+<ol>
+  <li>Nach der Installation öffnen sich die <b>Einstellungen</b> automatisch (sonst: Symbol anklicken → <i>Einstellungen</i>).
+      Eine Beispielregel ist schon angelegt, aber noch deaktiviert. Sie kann angepasst oder gelöscht werden.</li>
+  <li>Am einfachsten geht es so: In Q.wiki anmelden, auf das Symbol der Erweiterung klicken und <b>„Regel für diese Seite anlegen“</b> wählen.
+      Domain und Benutzer sind dann bereits eingetragen.</li>
+  <li>Für jede Regel folgende Felder ausfüllen:
+    <table>
+      <tr><th style="width:24%">Feld</th><th>Bedeutung / Beispiel</th></tr>
+      <tr><td><b>aktiv</b></td><td>Haken setzen, damit die Regel greift.</td></tr>
+      <tr><td><b>Domain</b></td><td><code>firma.ariadne.cloud</code> oder <code>*.ariadne.cloud</code> für alle Subdomains</td></tr>
+      <tr><td><b>Benutzer</b></td><td>In der neuen Q.wiki (ariadne.cloud) ist der WikiName eine ID wie <code>Q0123456789abcdef0123456789abcdef</code>.
+          Die Login-E-Mail funktioniert ebenfalls. Den genauen Wert zeigt das Popup unter „Benutzer“.
+          Mehrere Benutzer werden mit Komma getrennt, <code>*</code> steht für jeden angemeldeten Benutzer. Groß- und Kleinschreibung spielt keine Rolle.</td></tr>
+      <tr><td><b>Ziel-Seite</b></td><td>absolut (<code>https://…</code>) oder relativ zur Domain (<code>/Main/MeineStartseite</code>)</td></tr>
+      <tr><td><b>Wann weiterleiten?</b></td><td><i>Einmal nach dem Login</i> (Standard): Nur die erste Seite nach der Anmeldung wird umgeleitet, danach navigiert man frei.
+          Nach dem Abmelden oder einem Browser-Neustart greift die Regel wieder.<br>
+          <i>Jedes Mal bei Aufruf der Startseite</i>: Immer wenn die Startseite der Domain aufgerufen wird, z.&nbsp;B. auch beim Klick auf das Logo.</td></tr>
+    </table>
+  </li>
+  <li><b>„Speichern“</b> klicken. Der Browser fragt einmalig nach der <b>Erlaubnis für die Domain</b>. Bitte bestätigen, sonst kann die Erweiterung nicht arbeiten.</li>
+</ol>
+
+<h2>5. Bedienung im Alltag</h2>
+<ul>
+  <li><b>Ein/Aus:</b> Symbol anklicken → großer Schalter, oder Tastenkürzel <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd>.
+      Im ausgeschalteten Zustand zeigt das Symbol ein rotes <b>AUS</b>.</li>
+  <li><b>Diagnose:</b> Das Popup zeigt für den aktuellen Tab die Domain, den erkannten Benutzer und die passende Regel.</li>
+  <li><b>Merker zurücksetzen:</b> Danach wird beim nächsten Seitenaufruf wieder weitergeleitet. Das ist praktisch zum Testen.</li>
+  <li><b>Exportieren / Importieren:</b> Regeln lassen sich als JSON-Datei sichern oder an Kollegen weitergeben.</li>
+  <li><b>Tastenkürzel ändern:</b> Chrome <code>chrome://extensions/shortcuts</code>, Firefox: Add-ons → Zahnrad → Tastenkombinationen verwalten.</li>
+</ul>
+
+<h2>6. Fehlerbehebung</h2>
+<table class="avoid">
+  <tr><th style="width:36%">Problem</th><th>Lösung</th></tr>
+  <tr><td>Es wird nicht weitergeleitet</td><td>Ist der Hauptschalter an und die Regel „aktiv“? Wurde die Domain-Berechtigung beim Speichern bestätigt? Im Popup prüfen, ob der Benutzer erkannt wird und eine Regel passt.</td></tr>
+  <tr><td>Popup zeigt „kein Zugriff auf die Seite“</td><td>Die Berechtigung für die Domain fehlt. Regel erneut speichern und die Abfrage bestätigen.</td></tr>
+  <tr><td>Benutzer „nicht erkannt“</td><td>Bei Q.wiki tritt das normalerweise nicht auf. Bei anderen Systemen unter <i>Erweitert</i> einen CSS-Selektor oder regulären Ausdruck hinterlegen.</td></tr>
+  <tr><td>Weiterleitung nur einmal</td><td>So ist der Modus „Einmal nach dem Login“ gedacht. Zum erneuten Testen „Merker zurücksetzen“ verwenden.</td></tr>
+  <tr><td>Firefox: Erweiterung nach Neustart weg</td><td>Sie war nur temporär geladen. Für die dauerhafte Installation siehe Abschnitt 3.2.</td></tr>
+</table>
+
+<h2>7. Datenschutz</h2>
+<p>Die Erweiterung läuft nur auf den freigegebenen Domains, liest dort nur den angemeldeten Benutzernamen aus und <b>sendet keine Daten nach außen</b>.
+Die Regeln werden im Browserprofil gespeichert und mit diesem synchronisiert. Die Login-Merker werden beim Schließen des Browsers gelöscht.</p>
+
+<p class="small" style="margin-top:4mm">Fragen, Fehler und Ideen gern als Issue unter <code>github.com/soehner/startseiten-weiterleitung</code>.</p>
+</body>
+</html>

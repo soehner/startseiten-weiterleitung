@@ -23,6 +23,8 @@ Fertige Pakete gibt es unter [Releases](https://github.com/soehner/startseiten-w
 
 Alternativ das Repository klonen und `./build.sh` ausführen.
 
+Eine bebilderte Schritt-für-Schritt-Anleitung steht in [docs/Installationsanleitung.pdf](docs/Installationsanleitung.pdf).
+
 ## Installation
 
 `./build.sh` erzeugt `dist/chromium/` und `dist/firefox/` (entpackt) sowie je ein ZIP.
@@ -84,6 +86,7 @@ src/popup.*          Schnellschalter + Diagnose
 src/options.*        Regel-Verwaltung
 icons/               Symbole
 build.sh             erzeugt dist/*.zip
+docs/                Installationsanleitung (PDF + HTML-Quelle)
 ```
 
 ## Lizenz
